@@ -14,7 +14,6 @@ public class SimpleOomage implements Oomage {
 
     @Override
     public boolean equals(Object o) {
-        // TODO: Write this method.
         if (o == null) {
             return false;
         }
@@ -26,16 +25,12 @@ public class SimpleOomage implements Oomage {
 
     }
 
-    /* Uncomment this method after you've written
-       equals and failed the testHashCodeAndEqualsConsistency
-       test.
-     */
     @Override
     public int hashCode() {
         if (!USE_PERFECT_HASH) {
             return red + green + blue;
         } else {
-            return (red / 5) * 31 * 31 + (green / 5) * 31 + (blue / 5);
+            return (red / 5) * 53 * 53 + (green / 5) * 53 + (blue / 5);
         }
     }
 
