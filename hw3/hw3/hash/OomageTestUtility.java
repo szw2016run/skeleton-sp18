@@ -24,7 +24,7 @@ public class OomageTestUtility {
         }
         int N = oomages.size();
         for (int i = 0; i < M; i++) {
-            if (map.get(i) > N / 2.5 || map.get(i) < N / 50) {
+            if (map.getOrDefault(i, 0) > N / 2.5 || map.getOrDefault(i, 0) < N / 50) {
                 return false;
             }
         }
