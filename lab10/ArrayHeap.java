@@ -134,11 +134,14 @@ public class ArrayHeap<T> implements ExtrinsicPQ<T> {
         int right = rightIndex(index);
         if (left <= size && right <= size) {
             int m = min(left, right);
-            swap(m, index);
-            sink(m);
-            return;
+            if (contents[index].myPriority > contents[m].myPriority) {
+                swap(m, index);
+                sink(m);
+            }
         } else if (left <= size) {
-            swap(left, index);
+            if (contents[index].myPriority > contents[left].myPriority) {
+                swap(left, index);
+            }
         }
         return;
     }
