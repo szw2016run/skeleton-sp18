@@ -1,4 +1,5 @@
 import edu.princeton.cs.algs4.Queue;
+import edu.princeton.cs.algs4.Quick;
 
 public class QuickSort {
     /**
@@ -48,12 +49,29 @@ public class QuickSort {
             Queue<Item> unsorted, Item pivot,
             Queue<Item> less, Queue<Item> equal, Queue<Item> greater) {
         // Your code here!
+        for(Item item : unsorted) {
+            int d = item.compareTo(pivot);
+            if (d == 0) {
+                equal.enqueue(item);
+            } else if (d < 0) {
+                less.enqueue(item);
+            } else {
+                greater.enqueue(item);
+            }
+        }
     }
 
     /** Returns a Queue that contains the given items sorted from least to greatest. */
     public static <Item extends Comparable> Queue<Item> quickSort(
             Queue<Item> items) {
         // Your code here!
-        return items;
+        Item pivot = getRandomItem(items);
+        Queue<Item> less = new Queue<>();
+        Queue<Item> euqal = new Queue<>();
+        Queue<Item> greater = new Queue<>();
+        partition(items, pivot, less, euqal, greater);
+        quickSort(less);
+        quickSort(greater);
+        return catenate(catenate(less, euqal), greater);
     }
 }
