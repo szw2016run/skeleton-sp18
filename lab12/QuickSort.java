@@ -65,6 +65,9 @@ public class QuickSort {
     public static <Item extends Comparable> Queue<Item> quickSort(
             Queue<Item> items) {
         // Your code here!
+        if (items.size() <= 1) {
+            return items;
+        }
         Item pivot = getRandomItem(items);
         Queue<Item> less = new Queue<>();
         Queue<Item> euqal = new Queue<>();
