@@ -12,7 +12,7 @@ public class ArrayDeque<T> implements Iterable<T>{
         nextLast = 5;
         ArrayDeque = (T[]) new Object[capacity];
     }
-    public void resize(int num) {
+    private void resize(int num) {
         T[] newDeque = (T[]) new Object[num];
         int first = (nextFirst + 1) % capacity;
         for (int i = 0; i < size; i++) {

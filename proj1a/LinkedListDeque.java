@@ -59,6 +59,7 @@ public class LinkedListDeque <T> implements Iterable<T> {
         size -= 1;
         T res = sentinel.next.item;
         sentinel.next = sentinel.next.next;
+        sentinel.next.prev = sentinel;
         return res;
     }
 
@@ -69,6 +70,7 @@ public class LinkedListDeque <T> implements Iterable<T> {
         size -= 1;
         T res = sentinel.prev.item;
         sentinel.prev = sentinel.prev.prev;
+        sentinel.prev.next = sentinel;
         return res;
     }
 
@@ -92,7 +94,7 @@ public class LinkedListDeque <T> implements Iterable<T> {
         return getRecursiveHelper(index, this.sentinel.next);
 
     }
-    public T getRecursiveHelper(int index, Node node) {
+    private T getRecursiveHelper(int index, Node node) {
         if (index == 0) {
             return node.item;
         }
