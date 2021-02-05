@@ -1,6 +1,4 @@
-import java.util.Iterator;
-
-public class LinkedListDeque <T> implements Iterable<T> {
+public class LinkedListDeque<T> {
 
     private class Node {
         T item;
@@ -121,26 +119,26 @@ public class LinkedListDeque <T> implements Iterable<T> {
         return true;
     }
 
-    public Iterator<T> iterator() {
-        return new LinkedListDequeIter();
-    }
+//    public Iterator<T> iterator() {
+//        return new LinkedListDequeIter();
+//    }
 
-    private class LinkedListDequeIter implements Iterator<T> {
-        Node curr;
-        public LinkedListDequeIter() {
-            curr = sentinel.next;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return curr != sentinel; // curr.sentinel
-        }
-
-        @Override
-        public T next() {
-            T res = curr.item;
-            curr = curr.next;
-            return res;
-        }
-    }
+//    private class LinkedListDequeIter implements Iterator<T> {
+//        Node curr;
+//        public LinkedListDequeIter() {
+//            curr = sentinel.next;
+//        }
+//
+//        @Override
+//        public boolean hasNext() {
+//            return curr != sentinel; // curr.sentinel
+//        }
+//
+//        @Override
+//        public T next() {
+//            T res = curr.item;
+//            curr = curr.next;
+//            return res;
+//        }
+//    }
 }
