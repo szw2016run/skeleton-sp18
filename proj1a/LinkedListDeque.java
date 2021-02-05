@@ -99,25 +99,25 @@ public class LinkedListDeque<T> {
         return getRecursiveHelper(index - 1, node.next);
     }
 
-    public boolean equals(Object o) {
-        if (o.getClass() != this.getClass()) {
-            return false;
-        }
-        LinkedListDeque obj = (LinkedListDeque) o;
-        if (this.size() != obj.size()) {
-            return false;
-        }
-        Node p1 = this.sentinel.next;
-        Node p2 = this.sentinel.next;
-        while (p1 != sentinel) {
-            if (!p1.item.equals(p2.item)) {
-                return false;
-            }
-            p1 = p1.next;
-            p2 = p2.next;
-        }
-        return true;
-    }
+//    public boolean equals(Object o) {
+//        if (o.getClass() != this.getClass()) {
+//            return false;
+//        }
+//        LinkedListDeque obj = (LinkedListDeque) o;
+//        if (this.size() != obj.size()) {
+//            return false;
+//        }
+//        Node p1 = this.sentinel.next;
+//        Node p2 = this.sentinel.next;
+//        while (p1 != sentinel) {
+//            if (!p1.item.equals(p2.item)) {
+//                return false;
+//            }
+//            p1 = p1.next;
+//            p2 = p2.next;
+//        }
+//        return true;
+//    }
 
 //    public Iterator<T> iterator() {
 //        return new LinkedListDequeIter();
